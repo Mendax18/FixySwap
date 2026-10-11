@@ -1,0 +1,54 @@
+@import "tailwindcss" source(".");
+
+@theme {
+  --color-bg: #060a14;
+  --color-surface: #0c1628;
+  --color-fg: #e8eef8;
+  --color-muted: #8ea0bb;
+  --color-primary: #7eb6ff;
+  --color-pink: #7eb6ff;
+  --color-violet: #7eb6ff;
+  --color-cyan: #9ec8ff;
+  --color-primary-ink: #061018;
+  --color-border: #1c2c44;
+  --color-danger: #f87171;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono", monospace;
+  --radius-lg: 1rem;
+}
+
+@layer base {
+  html,
+  body {
+    background:
+      radial-gradient(900px 480px at 80% -10%, color-mix(in srgb, #1d4ed8 28%, transparent), transparent 70%),
+      radial-gradient(700px 420px at -10% 20%, color-mix(in srgb, #0e7490 16%, transparent), transparent 65%),
+      var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  button:not(:disabled) {
+    transition: scale 150ms ease-out;
+  }
+  button:not(:disabled):active {
+    scale: 0.96;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
