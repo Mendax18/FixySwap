@@ -1,0 +1,15 @@
+node_modules
+.tanstack
+.vercel
+.grok
+artifacts
+screenshots
+dist
+.output
+.env
+.env.*
+*.log
+
+programs/fixyswap/target
+programs/fixyswap/deployer.json
+programs/fixyswap/**/*keypair*.json
